@@ -1,2 +1,5 @@
 # dotfile
-building...
+
+not done yet
+
+for reference only
