@@ -1,0 +1,104 @@
+
+" -----------------------------------------------------------
+" source ~/.vim_runtime/vimrcs/basic.vim
+" try
+"   source ~/.vim_runtime/my_configs.vim
+" catch
+" endtry
+"
+
+" onely for wsl
+set clipboard=unnamedplus
+set nocompatible " no vi
+filetype plugin indent on
+syntax enable on
+
+set showcmd
+set number
+set relativenumber
+set autoindent
+set smartindent
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
+set scrolloff=8
+set mouse=a
+set expandtab
+set incsearch
+set nohlsearch
+set ignorecase
+set smartcase
+set showmatch
+set termguicolors
+set splitbelow
+set splitright
+set noshowmode
+set nowrap
+set noswapfile
+set nobackup
+set undofile
+set undodir=~/.config/nvim/undodir
+set hidden
+" set autochdir
+set autoread
+set autowrite
+set cursorline
+set ruler
+
+autocmd FileType text,markdown,tex setlocal textwidth=8
+
+" Maping-----------------------------------------------------------------------
+let mapleader=','
+
+inoremap jj <ESC>`^
+nnoremap <leader>w :w<cr>
+nnoremap <leader><F5> :so %<cr>
+
+" window switch
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" nnoremap <silent> [b :bprevious<CR>
+" nnoremap <silent> [n :bnext<CR>
+
+" Sudo to write
+cnoremap w!! w !sudo tee % > /dev/null
+
+" Macro------------------------------------------------------------------------
+let @h='ahelloworld'
+" -----------------------------------------------------------------------------
+" autocmd
+if has("autocmd")
+    autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
+"  Func
+func SetTitle()
+    if &filetype == 'python'
+        call setline(1, "\#!/usr/bin/env python")
+        call setline(2, "\# -*- coding:utf-8 -*-")
+        normal G
+        normal o
+        normal o
+        call setline(5,"if __name__ == '__main__':")
+        call setline(6,"pass")
+    endif
+endfunc
+func! CompileRunGcc()
+	exec "w"
+	exec '!g++ % -o %<'
+	exec '!time ./%<'
+endfunc
+
+nnoremap <F7> :call Term()<CR>
+func! Term()
+	exec 'terminal'
+endfunc
+
+packadd termdebug
+nnoremap <F12> :call GDB()<CR>
+func! GDB()
+	exec 'Termdebug %'
+endfunc
