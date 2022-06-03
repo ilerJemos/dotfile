@@ -1,56 +1,73 @@
-
-" -----------------------------------------------------------
-" source ~/.vim_runtime/vimrcs/basic.vim
-" try
-"   source ~/.vim_runtime/my_configs.vim
-" catch
-" endtry
-"
-
-" onely for wsl
-set clipboard=unnamedplus
-set nocompatible " no vi
+syntax on
 filetype plugin indent on
-syntax enable on
 
-set showcmd
+set nocompatible
+set encoding=utf-8
+" set mouse=a
+" set cursorline
 set number
-set relativenumber
+set ruler
+set hidden
+set clipboard=unnamedplus
+
+" indent
 set autoindent
 set smartindent
+
+" whitespace
+set formatoptions=tcqrn1
+set textwidth=79
 set shiftwidth=4
 set softtabstop=4
 set tabstop=4
-set scrolloff=8
-set mouse=a
 set expandtab
+
+" Cursor motion
+set scrolloff=3
+set backspace=indent,eol,start
+set matchpairs+=<:>
+runtime! macros/matchit.vim
+
+" Rendering
+set ttyfast
+
+"search
+nnoremap / /\v
+vnoremap / /\v
 set incsearch
-set nohlsearch
 set ignorecase
 set smartcase
 set showmatch
-set termguicolors
-set splitbelow
-set splitright
-set noshowmode
-set nowrap
-set noswapfile
-set nobackup
-set undofile
-set undodir=~/.config/nvim/undodir
-set hidden
-" set autochdir
-set autoread
-set autowrite
-set cursorline
-set ruler
+" set nohlsearch
+map <leader><space> :let @/=''<cr> " clear search
 
-autocmd FileType text,markdown,tex setlocal textwidth=8
+" auto dir
+set autoshelldir
+set autochdir
+
+" color schema
+" set termguicolors
+" set background=dark
+
+" status bar
+set laststatus=2
+
+" Last line
+set showmode
+set showcmd
+
+" Visualize tabs and newlines
+set listchars=tab:▸\ ,eol:¬
+
 
 " Maping-----------------------------------------------------------------------
 let mapleader=','
+map <leader>l :set list!<CR> " Toggle tabs and EOL
 
-inoremap jj <ESC>`^
+" Move up/down editor lines
+nnoremap j gj
+nnoremap k gk
+
 nnoremap <leader>w :w<cr>
 nnoremap <leader><F5> :so %<cr>
 
@@ -60,21 +77,22 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" nnoremap <silent> [b :bprevious<CR>
-" nnoremap <silent> [n :bnext<CR>
+nnoremap <silent> <S-H> :bprevious<CR>
+nnoremap <silent> <S-L> :bnext<CR>
 
 " Sudo to write
 cnoremap w!! w !sudo tee % > /dev/null
 
 " Macro------------------------------------------------------------------------
 let @h='ahelloworld'
-" -----------------------------------------------------------------------------
-" autocmd
+
+" Autocmd----------------------------------------------------------------------------
+"autocmd FileType text,markdown,tex setlocal textwidth=8
 if has("autocmd")
     autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
-"  Func
+" Func----------------------------------------------------------------------------
 func SetTitle()
     if &filetype == 'python'
         call setline(1, "\#!/usr/bin/env python")
