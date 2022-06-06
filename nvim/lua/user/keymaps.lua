@@ -1,12 +1,9 @@
-local opts = { noremap = true, silent = true }
-
--- local term_opts = { silent = true }
-
--- Shorten function name
 local keymap = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
+local term_opts = { silent = true }
 
 --Remap space as leader key
--- keymap("", "<Space>", "<Nop>", opts)
+keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = ","
 vim.g.maplocalleader = ","
 
@@ -39,6 +36,10 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
+-- Temp
+-- keymap("n", "<leader>e", "<Cmd>15 Lex<CR>", opts)
+keymap("n", "<leader>w", "<Cmd>w<CR>", opts)
+
 -- Insert --
 -- Press jk fast to enter
 -- keymap("i", "jk", "<ESC>", opts)
@@ -67,3 +68,17 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
+-- keymap("t", "<Esc>", "<C-\\><C-n>", term_opts)
+-- keymap("t","<C-R>" '<C-\><C-N>"'.nr2char(getchar()).'pi'", term_opts)
+-- keymap("t", "<A-h>", "<C-\\><C-N><C-w>h", term_opts)
+-- keymap("t", "<A-j>", "<C-\\><C-N><C-w>j", term_opts)
+-- keymap("t", "<A-k>", "<C-\\><C-N><C-w>k", term_opts)
+-- keymap("t", "<A-l>", "<C-\\><C-N><C-w>l", term_opts)
+-- keymap("t", "<A-h>", "<C-\\><C-N><C-w>h", term_opts)
+-- keymap("t", "<A-j>", "<C-\\><C-N><C-w>j", term_opts)
+-- keymap("t", "<A-k>", "<C-\\><C-N><C-w>k", term_opts)
+-- keymap("t", "<A-l>", "<C-\\><C-N><C-w>l", term_opts)
+-- keymap("t", "<A-h>", "<C-w>h", term_opts)
+-- keymap("t", "<A-j>", "<C-w>j", term_opts)
+-- keymap("t", "<A-k>", "<C-w>k", term_opts)
+-- keymap("t", "<A-l>", "<C-w>l", term_opts)

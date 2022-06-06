@@ -1,21 +1,25 @@
 syntax on
 filetype plugin indent on
 
+colorscheme desert      " colorscheme desert
+
 set nocompatible
 set encoding=utf-8
 " set mouse=a
-" set cursorline
+set cursorline
 set number
 set ruler
 set hidden
 set clipboard=unnamedplus
+set nobackup
+set nowrap
 
 " indent
 set autoindent
 set smartindent
 
 " whitespace
-set formatoptions=tcqrn1
+" set formatoptions=tcqrn1
 set textwidth=79
 set shiftwidth=4
 set softtabstop=4
@@ -41,6 +45,7 @@ set showmatch
 " set nohlsearch
 map <leader><space> :let @/=''<cr> " clear search
 
+
 " auto dir
 set autoshelldir
 set autochdir
@@ -63,6 +68,7 @@ set listchars=tab:▸\ ,eol:¬
 " Maping-----------------------------------------------------------------------
 let mapleader=','
 map <leader>l :set list!<CR> " Toggle tabs and EOL
+nnoremap <leader>e :15Lex<cr>
 
 " Move up/down editor lines
 nnoremap j gj

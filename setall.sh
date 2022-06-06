@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 
-# vimrc
-ln -s ./vimrc ~/.vimrc 
+# vim config
+ln -svf $(pwd)/vimrc ~/.vimrc 
+
+# neovim config
+ln -svf $(pwd)/nvim ~/.config/nvim

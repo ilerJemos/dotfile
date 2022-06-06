@@ -1,46 +1,114 @@
-local options = {
-  backup = false,                          -- creates a backup file
-  clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
-  cmdheight = 2,                           -- more space in the neovim command line for displaying messages
-  completeopt = { "menuone", "noselect" }, -- mostly just for cmp
-  conceallevel = 0,                        -- so that `` is visible in markdown files
-  fileencoding = "utf-8",                  -- the encoding written to a file
-  hlsearch = true,                         -- highlight all matches on previous search pattern
-  ignorecase = true,                       -- ignore case in search patterns
-  mouse = "a",                             -- allow the mouse to be used in neovim
-  pumheight = 10,                          -- pop up menu height
-  showmode = false,                        -- we don't need to see things like -- INSERT -- anymore
-  showtabline = 2,                         -- always show tabs
-  smartcase = true,                        -- smart case
-  smartindent = true,                      -- make indenting smarter again
-  splitbelow = true,                       -- force all horizontal splits to go below current window
-  splitright = true,                       -- force all vertical splits to go to the right of current window
-  swapfile = false,                        -- creates a swapfile
-  -- termguicolors = true,                    -- set term gui colors (most terminals support this)
-  timeoutlen = 100,                        -- time to wait for a mapped sequence to complete (in milliseconds)
-  undofile = true,                         -- enable persistent undo
-  updatetime = 300,                        -- faster completion (4000ms default)
-  writebackup = false,                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
-  expandtab = true,                        -- convert tabs to spaces
-  shiftwidth = 4,                          -- the number of spaces inserted for each indentation
-  tabstop = 4,                             -- insert 2 spaces for a tab
-  cursorline = true,                       -- highlight the current line
-  number = true,                           -- set numbered lines
-  relativenumber = false,                  -- set relative numbered lines
-  numberwidth = 4,                         -- set number column width to 2 {default 4}
-  signcolumn = "yes",                      -- always show the sign column, otherwise it would shift the text each time
-  wrap = false,                            -- display lines as one long line
-  scrolloff = 8,                           -- is one of my fav
-  sidescrolloff = 8,
-  guifont = "monospace:h17",               -- the font used in graphical neovim applications
-}
+local exec = vim.api.nvim_exec -- execute Vimscript
+local set = vim.opt -- global options
+local cmd = vim.cmd -- execute Vim commands
+-- local fn    = vim.fn            -- call Vim functions
+-- local g = vim.g -- global variables
+-- local b     = vim.bo            -- buffer-scoped options
+-- local w     = vim.wo            -- windows-scoped options
 
-vim.opt.shortmess:append "c"
+-- cmd('autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=grey') -- to Show whitespace, MUST be inserted BEFORE the colorscheme command
+-- set.guifont = 'DroidSansMono Nerd Font 11'
+--  set.guifont = "monospace:h17",               -- the font used in graphical neovim applications
+set.termguicolors = true -- Enable GUI colors for the terminal to get truecolor
+-- set.list = false -- show whitespace
+-- set.listchars = {
+--   nbsp = '⦸', -- CIRCLED REVERSE SOLIDUS (U+29B8, UTF-8: E2 A6 B8)
+--   extends = '»', -- RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK (U+00BB, UTF-8: C2 BB)
+--   precedes = '«', -- LEFT-POINTING DOUBLE ANGLE QUOTATION MARK (U+00AB, UTF-8: C2 AB)
+--   tab = '▷─', -- WHITE RIGHT-POINTING TRIANGLE (U+25B7, UTF-8: E2 96 B7) + BOX DRAWINGS HEAVY TRIPLE DASH HORIZONTAL (U+2505, UTF-8: E2 94 85)
+--   trail = '•', -- BULLET (U+2022, UTF-8: E2 80 A2)
+--   space = ' '
+-- }
+-- set.fillchars = {
+--   diff = '∙', -- BULLET OPERATOR (U+2219, UTF-8: E2 88 99)
+--   eob = ' ', -->NO-BREAK SPACE (U+00A0, UTF-8: C2 A0) to suppress ~ at EndOfBuffer
+--   fold = '·', -- MIDDLE DOT (U+00B7, UTF-8: C2 B7)
+--   vert = ' ' -- remove ugly vertical lines on window division
+--}
+set.undofile = true
+set.clipboard = set.clipboard + "unnamedplus" -- copy & paste
+set.wrap = false -- don't automatically wrap on load
+set.showmatch = true -- show the matching part of the pair for [] {} and ()
+set.cursorline = true -- highlight current line
+set.number = true -- show line numbers
+set.incsearch = true -- incremental search
+set.hlsearch = true -- highlighted search results
+set.ignorecase = true -- ignore case sensetive while searching
+set.smartcase = true
+set.scrolloff = 1 -- when scrolling, keep cursor 1 lines away from screen border
+set.sidescrolloff = 2 -- keep 30 columns visible left and right of the cursor at all times
+set.backspace = "indent,start,eol" -- make backspace behave like normal again
+set.mouse = "a" -- turn on mouse interaction
+set.updatetime = 500 -- CursorHold interval
+set.expandtab = true
+set.softtabstop = 2
+set.shiftwidth = 2 -- spaces per tab (when shifting), when using the >> or << commands, shift lines by 4 spaces
+set.tabstop = 2 -- spaces per tab
+set.smarttab = true -- <tab>/<BS> indent/dedent in leading whitespace
+set.autoindent = true -- maintain indent of current line
+set.shiftround = true
+set.splitbelow = true -- open horizontal splits below current window
+set.splitright = true -- open vertical splits to the right of the current window
+set.laststatus = 2 -- always show status line
+set.colorcolumn = "79" -- vertical word limit line
+set.showtabline = 2 -- always show tabs
+set.showmode = false -- we don't need to see things like -- INSERT -- anymore
+set.fileencoding = "utf-8" -- the encoding written to a fileset.cmdheight = 2,                           -- more space in the neovim command line for displaying messages
+-- set.conceallevel = 0                       -- so that `` is visible in markdown files
+set.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
+set.writebackup = false -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
+-- set.pumheight = 10                          -- pop up menu height
+-- vim.opt.shortmess:append "c"
+-- vim.cmd "set whichwrap+=<,>,[,],h,l"
 
-for k, v in pairs(options) do
-  vim.opt[k] = v
-end
+set.hidden = true -- allows you to hide buffers with unsaved changes without being prompted
+set.inccommand = "split" -- live preview of :s results set seeet
+set.shell = "zsh" -- shell to use for `!`, `:!`, `system()` etc.
+-- highlight on yank
+exec(
+	[[
+  augroup YankHighlight
+    autocmd!
+    autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=500, on_visual=true}
+  augroup end
+]],
+	false
+)
 
-vim.cmd "set whichwrap+=<,>,[,],h,l"
-vim.cmd [[set iskeyword+=-]]
-vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
+-- jump to the last position when reopening a file
+cmd([[
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+endif
+]])
+
+-- -- auto source vim
+-- cmd([[
+--   augroup neovim
+-- 		autocmd!
+-- 		autocmd BufWritePost $MYVIMRC nested source $MYVIMRC
+-- 	augroup end
+-- ]])
+
+-- patterns to ignore during file-navigation
+set.wildignore = set.wildignore + "*.o,*.rej,*.so"
+-- remove whitespace on save
+cmd([[au BufWritePre * :%s/\s\+$//e]])
+-- faster scrolling
+set.lazyredraw = true
+-- don't auto commenting new lines
+cmd([[au BufEnter * set fo-=c fo-=r fo-=o]])
+-- completion options
+set.completeopt = "menuone,noselect,noinsert"
+
+-- set markdown filytype default
+cmd([[ autocmd BufNewFile,BufRead *.mdx set filetype=markdown ]])
+
+-- 2 spaces for selected filetypes
+cmd([[ autocmd FileType xml,html,xhtml,css,scssjavascript,lua,dart setlocal shiftwidth=2 tabstop=2 ]])
+-- json
+cmd([[ au BufEnter *.json set ai expandtab shiftwidth=2 tabstop=2 sta fo=croql ]])
+
+--- latex
+vim.g.tex_flavor = "latex"
+cmd([[ autocmd FileType latex,tex,plaintex set wrap linebreak ]])

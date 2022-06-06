@@ -1,21 +1,32 @@
-require "user.options"
-require "user.keymaps"
-require "user.plugins"
-require "user.colorscheme"
-require "user.cmp"
-require "user.lsp"
-require "user.telescope"
-require "user.treesitter"
-require "user.autopairs"
-require "user.comment"
-require "user.gitsigns"
-require "user.nvim-tree"
-require "user.bufferline"
-require "user.lualine"
-require "user.toggleterm"
-require "user.project"
-require "user.impatient"
-require "user.indentline"
-require "user.alpha"
-require "user.whichkey"
-require "user.autocommands"
+require("user.impatient")
+-- basic
+require("user.options")
+require("user.keymaps")
+require("user.plugins")
+
+-- core
+require("user.cmp")
+require("user.lsp")
+require("user.telescope")
+require("user.treesitter")
+
+-- beauty
+require("user.alpha")
+require("user.colorscheme")
+require("user.lualine")
+require("user.bufferline")
+require("user.nvim-tree")
+-- require("user.nnn")
+
+-- unnecessary
+require("user.null-ls")
+
+-- tools
+require("user.comment")
+require("user.autopairs")
+require("user.which-key")
+require("user.indent-blankline")
+require("user.toggleterm")
+
+-- require("user.gitsigns")
+require("user.project")
