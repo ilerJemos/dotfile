@@ -31,3 +31,7 @@ require("user.toggleterm")
 
 -- require("user.gitsigns")
 require("user.project")
+
+-- new installed waiting for test
+require("user.dap")
+require("user.zen-mode")
