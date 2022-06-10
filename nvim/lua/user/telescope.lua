@@ -23,7 +23,7 @@ require("telescope").setup({
 	extensions = {
 		-- Your extension configuration goes here:
 		-- extension_name = {
-		  -- extension_config_key = value,
+		-- extension_config_key = value,
 		-- }
 		-- please take a look at the readme of the extension you want to configure
 	},
@@ -39,7 +39,9 @@ keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
 keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", opts)
 keymap("n", "<leader>fm", "<cmd>Telescope builtin<cr>", opts)
 keymap("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", opts)
+
 keymap("n", "<leader>fp", "<cmd>Telescope projects<cr>", opts)
+keymap("n", "<leader>fd", "<cmd>Telescope dap commands<cr>", opts)
 
 -- " Using Lua functions
 --keymap("n", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<cr>", opts)

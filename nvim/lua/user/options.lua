@@ -51,13 +51,13 @@ set.inccommand = "split" -- live preview of :s results set seeet
 set.shell = "zsh" -- shell to use for `!`, `:!`, `system()` etc.
 -- highlight on yank
 exec(
-  [[
+	[[
   augroup YankHighlight
     autocmd!
     autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=500, on_visual=true}
   augroup end
-]] ,
-  false
+]],
+	false
 )
 
 -- jump to the last position when reopening a file
