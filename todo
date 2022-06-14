@@ -1,6 +1,7 @@
 # TODO
 
-
 0. user utils.map to replace all key map
 1. nvim dap
 2. nvim with jupyter notebook
+3. nvim outline/tagbar: navigator, vista, symbols-outline
+4. ref: LunarVim, Nvchad, AstroNvim

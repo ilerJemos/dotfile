@@ -1,7 +1,9 @@
+let mapleader=','
+
 syntax on
 filetype plugin indent on
 
-colorscheme desert      " colorscheme desert
+" colorscheme desert      " colorscheme desert
 
 set nocompatible
 set encoding=utf-8
@@ -13,6 +15,7 @@ set hidden
 set clipboard=unnamedplus
 set nobackup
 set nowrap
+
 
 " indent
 set autoindent
@@ -66,7 +69,6 @@ set listchars=tab:▸\ ,eol:¬
 
 
 " Maping-----------------------------------------------------------------------
-let mapleader=','
 map <leader>l :set list!<CR> " Toggle tabs and EOL
 nnoremap <leader>e :15Lex<cr>
 
