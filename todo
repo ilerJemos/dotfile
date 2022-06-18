@@ -9,3 +9,9 @@
 
 * auto install *
 dobot
+
+[ ] alacritty
+[ ] tmux
+[x] vim
+[x] neovim
+[ ] ohmyzsh

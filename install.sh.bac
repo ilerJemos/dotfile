@@ -1,0 +1,116 @@
+pacman -S  shadowsocks-libev
+
+
+## manually
+
+### update mirror list
+### update system
+
+### paru
+sudo pacman -S --needed base-devel
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si
+
+### shadowsocks config
+
+ss-local -c ss.confg
+
+todo: start as a service
+```
+  [Unit]
+  Description= Shadowsocks
+  After=network.target
+
+  [Service]
+  Type=simple
+  Restart=always
+  ExecStart=/usr/bin/ss-local -c /etc/shadowsocks/config.json
+
+  [Install]
+  WantedBy=multi-user.target
+```
+sudo systemctl enable shadowsocks
+
+### git config
+git config --global user.name ilerjemos
+git config --global user.email tortorly@126.com
+git config --global http.proxy socks5://127.0.0.1:1080
+git config --global https.proxy socks5://127.0.0.1:1080
+
+lazygit
+
+### web browser < aur
+paru google-chrome
+
+### Editor
+vim neovim code
+lunarvim
+
+### input method
+
+## ibus
+## fcitx5
+
+### system tools
+neofetch htop
+tldr cht
+ripgrep fzf
+ranger nnn
+
+## img tool
+feh
+
+### dev env
+
+#### c/cpp
+#### python
+# pip
+pacman -S python-pip
+miniconda < aur
+#### java
+#### go
+pacman -S go go-tools
+# go env
+# todo: go proxy
+
+nvm
+npm
+
+### Terminal
+alacritty
+mkdir ~/.config/alacritty
+cp /usr/share/doc/alacritty/example/alacritty.yml ~/.config/alacritty/alacritty.yml
+tmux
+
+### shell
+zsh
+#### ohmyzsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -x socks5://127.0.0.1:1080)"
+
+### download tools
+#aria2
+#youtube-dl
+#
+### fonts < aur
+nerd-fonts-complete
+nerd-fonts-jetbrains-mono
+nerd-fonts-hack
+nerd-fonts-source-code-pro
+
+## Proxy
+proxychains-ng
+## todo: delete last line
+echo "socks5 127.0.0.1 1080" >> /etc/proxychains.conf
+
+## Media Plyaer
+mpv
+vlc
+
+## PDF EPUB VIEWER
+foliate
+evince
+
+## docker
+pacman -S docker
+sudo usermod -aG docker $USER

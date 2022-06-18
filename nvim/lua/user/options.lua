@@ -12,7 +12,7 @@ vim.g.maplocalleader = ","
 set.termguicolors = true -- Enable GUI colors for the terminal to get truecolor
 set.undofile = true
 set.clipboard = set.clipboard + "unnamedplus" -- copy & paste
-set.wrap = false -- don't automatically wrap on load
+set.wrap = true -- don't automatically wrap on load
 set.showmatch = true -- show the matching part of the pair for [] {} and ()
 set.cursorline = true -- highlight current line
 set.number = true -- show line numbers
@@ -35,7 +35,7 @@ set.shiftround = true
 set.splitbelow = true -- open horizontal splits below current window
 set.splitright = true -- open vertical splits to the right of the current window
 set.laststatus = 2 -- always show status line
-set.colorcolumn = "79" -- vertical word limit line
+-- set.colorcolumn = "79" -- vertical word limit line
 set.showtabline = 2 -- always show tabs
 set.showmode = false -- we don't need to see things like -- INSERT -- anymore
 set.fileencoding = "utf-8" -- the encoding written to a fileset.cmdheight = 2,                           -- more space in the neovim command line for displaying messages
