@@ -54,3 +54,6 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv")
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 -- keymap("t", "<Esc>", "<C-\\><C-n>", term_opts)
+
+
+keymap("n", "<F8>", "<Cmd>SymbolsOutline<CR>")

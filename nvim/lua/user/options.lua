@@ -34,9 +34,9 @@ set.autoindent = true -- maintain indent of current line
 set.shiftround = true
 set.splitbelow = true -- open horizontal splits below current window
 set.splitright = true -- open vertical splits to the right of the current window
-set.laststatus = 2 -- always show status line
+set.laststatus = 3 -- always show status line
 -- set.colorcolumn = "79" -- vertical word limit line
-set.showtabline = 2 -- always show tabs
+set.showtabline = 1 -- always show tabs
 set.showmode = false -- we don't need to see things like -- INSERT -- anymore
 set.fileencoding = "utf-8" -- the encoding written to a fileset.cmdheight = 2,                           -- more space in the neovim command line for displaying messages
 -- set.conceallevel = 0                       -- so that `` is visible in markdown files
@@ -97,3 +97,7 @@ cmd([[ au BufEnter *.json set ai expandtab shiftwidth=2 tabstop=2 sta fo=croql ]
 --- latex
 -- vim.g.tex_flavor = "latex"
 -- cmd([[ autocmd FileType latex,tex,plaintex set wrap linebreak ]])
+cmd([[ autocmd InsertLeave * :silent !fcitx5-remote -c ]])
+cmd([[ autocmd BufCreate *  :silent !fcitx5-remote -c ]])
+cmd([[ autocmd BufEnter *  :silent !fcitx5-remote -c ]])
+cmd([[ autocmd BufLeave *  :silent !fcitx5-remote -c ]])

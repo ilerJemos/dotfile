@@ -35,3 +35,6 @@ require("user.project")
 -- new installed waiting for test
 require("user.dap")
 require("user.zen-mode")
+
+require("user.luasnip")
+require("user.diffview")

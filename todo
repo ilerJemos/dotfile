@@ -1,5 +1,8 @@
 # TODO
 
+> ref:
+> https://alpha2phi.medium.com/learn-neovim-the-practical-way-8818fcf4830f#545a
+
 0. user utils.map to replace all key map
 1. nvim dap
 2. nvim with jupyter notebook

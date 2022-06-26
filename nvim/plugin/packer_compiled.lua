@@ -119,10 +119,20 @@ _G.packer_plugins = {
     path = "/home/iler/.local/share/nvim/site/pack/packer/start/colorschemes",
     url = "https://github.com/lunarvim/colorschemes"
   },
+  ["dap-buddy"] = {
+    loaded = true,
+    path = "/home/iler/.local/share/nvim/site/pack/packer/start/dap-buddy",
+    url = "https://github.com/pocco81/dap-buddy"
+  },
   ["darkplus.nvim"] = {
     loaded = true,
     path = "/home/iler/.local/share/nvim/site/pack/packer/start/darkplus.nvim",
     url = "https://github.com/lunarvim/darkplus.nvim"
+  },
+  ["diffview.nvim"] = {
+    loaded = true,
+    path = "/home/iler/.local/share/nvim/site/pack/packer/start/diffview.nvim",
+    url = "https://github.com/sindrets/diffview.nvim"
   },
   everforest = {
     loaded = true,
@@ -228,6 +238,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/iler/.local/share/nvim/site/pack/packer/start/project.nvim",
     url = "https://github.com/ahmedkhalf/project.nvim"
+  },
+  ["symbols-outline.nvim"] = {
+    loaded = true,
+    path = "/home/iler/.local/share/nvim/site/pack/packer/start/symbols-outline.nvim",
+    url = "https://github.com/simrat39/symbols-outline.nvim"
   },
   ["telescope-dap.nvim"] = {
     loaded = true,
