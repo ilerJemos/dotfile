@@ -15,10 +15,10 @@
     "lc": {
         "prefix": "lc",
         "body": [
-            "#include <algorithm>",
-            "#include <iostream>",
-            "#include <string>",
-            "#include <vector>",
+            "// ",
+            "// ",
+            "// ",
+            "#include <bits/stdc++.h>",
             "",
             "using namespace std;",
             "",
@@ -30,7 +30,7 @@
             "\t}",
             "};",
             "",
-            "int main(int argc, char *argv[]) {",
+            "int main() {",
             "\tSolution s;",
             "\ts.$2();",
             "\treturn 0;",

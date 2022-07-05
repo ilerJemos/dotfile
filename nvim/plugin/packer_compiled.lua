@@ -119,10 +119,10 @@ _G.packer_plugins = {
     path = "/home/iler/.local/share/nvim/site/pack/packer/start/colorschemes",
     url = "https://github.com/lunarvim/colorschemes"
   },
-  ["dap-buddy"] = {
+  ["dap-buddy.nvim"] = {
     loaded = true,
-    path = "/home/iler/.local/share/nvim/site/pack/packer/start/dap-buddy",
-    url = "https://github.com/pocco81/dap-buddy"
+    path = "/home/iler/.local/share/nvim/site/pack/packer/start/dap-buddy.nvim",
+    url = "https://github.com/pocco81/dap-buddy.nvim"
   },
   ["darkplus.nvim"] = {
     loaded = true,

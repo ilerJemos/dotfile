@@ -416,3 +416,4 @@ tmux_conf_uninstall_plugins_on_reload=true
 #
 # "$@"
 # # /!\ do not remove the previous line
+set-option -sa terminal-overrides ',XXX:RGB'
