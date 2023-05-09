@@ -1,13 +1,3 @@
-let mapleader=","
-
-" set filetype
-set background=dark
-syntax enable
-filetype plugin indent on
-
-" colorscheme desert      " colorscheme desert
-
-set nocompatible
 " set encoding=utf-8
 " set mouse=a
 " set cursorline
@@ -52,7 +42,6 @@ set showmatch
 
 
 " auto dir
-set autoshelldir
 set autochdir
 
 " color schema
@@ -71,7 +60,7 @@ set showcmd
     
 
 
-" Maping-----------------------------------------------------------------------
+" Maping---------------------------------------------------------------
 nnoremap <leader>e :15Lex<cr>
 
 " Move up/down editor lines
@@ -93,18 +82,18 @@ nnoremap <silent> <S-L> :bnext<CR>
 " Sudo to write
 cnoremap w!! w !sudo tee % > /dev/null
 
-" Macro------------------------------------------------------------------------
+" Macro----------------------------------------------------------------
 " set reg 'h'
 " let @h='ahelloworld'
 
-" Autocmd----------------------------------------------------------------------------
+" Autocmd--------------------------------------------------------------
 "autocmd FileType text,markdown,tex setlocal textwidth=8
 if has("autocmd")
     " delete last blank space
     autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
-" Func----------------------------------------------------------------------------
+" Func-----------------------------------------------------------------
 func SetTitle()
     if &filetype == 'python'
         call setline(1, "\#!/usr/bin/env python")
