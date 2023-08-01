@@ -1,0 +1,5 @@
+vim.loader.enable()
+require("user.options")
+require("user.keymaps")
+require("user.cmd")
+require("user.lazy_nvim")
